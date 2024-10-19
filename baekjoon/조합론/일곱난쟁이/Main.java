@@ -1,4 +1,4 @@
-package baekjoon.일곱난쟁이;
+package baekjoon.조합론.일곱난쟁이;
 
 import java.io.*;
 import java.util.*;

@@ -1,22 +1,18 @@
-//1010번
-//4시40분 -> 7시50분 = 3시간
+//4시10분 -> 4시30분 = 20분
 
-package baekjoon.다리놓기;
+package baekjoon.조합론.이항계수1;
 
 import java.io.*;
 
 public class Main {
-  public static int[][] dp = new int[30][30];
-
+  public static int[][] dp = new int[11][11];
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    int cnt = Integer.parseInt(br.readLine());
-    for (int i = 0; i < cnt; i++) {
-      String[] arr = br.readLine().split(" ");
-      int n = Integer.parseInt(arr[1]);
-      int r = Integer.parseInt(arr[0]);
-      System.out.println(combination(n, r));
-    }
+    String str = br.readLine();
+    String arr[] = str.split(" ");
+    int n = Integer.parseInt(arr[0]);
+    int r = Integer.parseInt(arr[1]);
+    System.out.println(combination(n, r));
   }
 
   public static int combination(int n, int r) {
