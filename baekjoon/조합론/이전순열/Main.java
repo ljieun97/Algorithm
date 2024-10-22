@@ -1,11 +1,10 @@
-//2시10분 - 5시40분 = 3시간30분
+//5시 45분 - 7시 10분 = 1시간25분
 
-package baekjoon.조합론.다음순열;
+package baekjoon.조합론.이전순열;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class Main {
   public static int[] input;
@@ -19,34 +18,45 @@ public class Main {
     for (int i = 0; i < n; i++) {
       input[i] = Integer.parseInt(str[i]);
     }
+
+    // n = 3;
+    // input = new int[] { 3, 1, 2 };
     permutation();
   }
 
   public static void permutation() {
-    int idx = n - 1;
-    while (idx > 0 && input[idx - 1] > input[idx]) {
-      idx--;
+    int i = n - 1;
+    while (i > 0 && input[i - 1] < input[i]) {
+      i--;
     }
 
-    if (idx == 0) {
+    if (i == 0) {
       System.out.println("-1");
       return;
     }
 
-    int bigIdx = n - 1;
-    while (bigIdx > idx && input[idx - 1] > input[bigIdx]) {
-      bigIdx--;
+    int j = n - 1;
+    while (input[i - 1] < input[j]) {
+      j--;
     }
 
-    int temp = input[idx - 1];
-    input[idx - 1] = input[bigIdx];
-    input[bigIdx] = temp;
+    swap(i - 1, j);
+    j = n - 1;
+    while (i < j) {
+      swap(i, j);
+      i++;
+      j--;
+    }
 
-    Arrays.sort(input, idx, n);
-
-    for(int i=0; i<n; i++) {
-      System.out.print(input[i]+" ");
+    for (int k = 0; k < n; k++) {
+      System.out.print(input[k] + " ");
     }
     System.out.println();
+  }
+
+  public static void swap(int i, int j) {
+    int temp = input[i];
+    input[i] = input[j];
+    input[j] = temp;
   }
 }
