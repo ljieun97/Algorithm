@@ -17,6 +17,8 @@ public class Main {
     double am = 1 - a;
     double bm = 1 - b;
 
+    
+
     // 1 1 둘다
     // 1 0 a팀
     // 0 1 b팀

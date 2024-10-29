@@ -20,6 +20,7 @@ public class Main {
     int r = Integer.parseInt(narr[0]);
     answer = new String[r];
     Arrays.sort(arr);
+
     combination(arr, 0, n, r, 0);
   }
 
