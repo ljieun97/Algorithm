@@ -3,7 +3,7 @@
 // a*b=c 일때, c를 이루는 모든 숫자가 a와 b를 이루는 숫자에 포함되어있는 a,b 쌍의 갯수 구하기
 // ex) num=129, num2=32, result=159
 
-package etc;
+package etc.lg;
 
 class Solution {
   public int solution(int num1, int num2) {
