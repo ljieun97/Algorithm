@@ -8,10 +8,10 @@ class Solution {
     int[] arr = new int[length];
     int idx = 0;
     for (long i = left; i < right + 1; i++) {
-      if (i / n + 1 <= i % n + 1)
-        arr[idx] = (int) i % n + 1;
+      if (i / n <= i % n )
+        arr[idx] = (int) (i % n + 1);
       else
-        arr[idx] = (int) i / n + 1;
+        arr[idx] = (int) (i / n + 1);
       idx++;
     }
     return arr;
