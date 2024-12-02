@@ -1,37 +1,31 @@
-//다시풀기
-
 package programmers.level2.탐욕법.큰수만들기;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.Stack;
 
-class Solution{
+class Solution {
   public String solution(String number, int k) {
+    Stack<Character> s = new Stack<>();
     String answer = "";
-    boolean[] visited = new boolean[number.length()];
-    back(number, visited, "", 0, number.length(), number.length()-k);
+    int length = number.length()-k;
+    for (int i = 0; i < number.length(); i++) {
+      while (!s.isEmpty() && k > 0 && s.peek() < number.charAt(i)) {
+        s.pop();
+        k--;
+      }
+      s.push(number.charAt(i));
+    }
+    for (int i = 0; i < length; i++) {
+      answer += s.get(i);
+    }
     return answer;
   }
-  public void back(String number, boolean[] visited, String str, int start, int n, int r) {
-    if(r==0) {
-      System.out.println(str);
-      return;
-    }
-
-    for(int i=start; i<n; i++) {
-      if(!visited[i]) {
-        visited[i]=true;
-        back(number, visited, str+number.charAt(i), start+1, n, r-1);
-        visited[i]=false;
-      }
-    }
-  }
 }
+
 public class Main {
   public static void main(String[] args) {
     Solution s = new Solution();
-    System.out.println(s.solution("1924", 2));
-    // System.out.println(s.solution("1231234", 3));
-    // System.out.println(s.solution("4177252841", 4));
+    System.out.println(s.solution("10", 1));
+    System.out.println(s.solution("1231234", 3));
+    System.out.println(s.solution("4177252841", 4));
   }
 }
