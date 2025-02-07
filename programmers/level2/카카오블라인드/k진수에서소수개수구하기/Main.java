@@ -2,8 +2,6 @@
 
 package programmers.level2.카카오블라인드.k진수에서소수개수구하기;
 
-import java.util.Arrays;
-
 class Solution {
   public int solution(int n, int k) {
     int answer = 0;
