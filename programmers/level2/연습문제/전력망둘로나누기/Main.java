@@ -1,3 +1,5 @@
+//답보고 풀었음 -> 백준dfs해야댐 
+
 package programmers.level2.연습문제.전력망둘로나누기;
 
 import java.util.LinkedList;
