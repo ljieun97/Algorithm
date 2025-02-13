@@ -1,3 +1,5 @@
+//오랜만에 혼자서 풀었다 1시간반정도
+
 package programmers.level2.카카오블라인드.메뉴리뉴얼;
 
 import java.util.*;

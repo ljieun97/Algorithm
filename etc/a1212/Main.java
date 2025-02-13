@@ -1,9 +1,8 @@
-// 언니 친구가 lg가서 봤다는 코테
 // 1~num1 사이값을 가지는 a와 1~num2 사이 값을 가지는 b
 // a*b=c 일때, c를 이루는 모든 숫자가 a와 b를 이루는 숫자에 포함되어있는 a,b 쌍의 갯수 구하기
 // ex) num=129, num2=32, result=159
 
-package etc.lg;
+package etc.a1212;
 
 class Solution {
   public int solution(int num1, int num2) {
